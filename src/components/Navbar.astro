@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import logoImg from '../images/logo.jpg';
+import { WA_LINK } from '../config/site';
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-brand-bg/80 backdrop-blur-lg border-b border-brand-purple/20">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <a href="#inicio" class="flex items-center gap-3 group">
+      <Image src={logoImg} alt="Nuestro Bar" width={42} height={42}
+        class="rounded-full object-cover ring-2 ring-brand-gold/30 group-hover:ring-brand-gold/60 transition-all" />
+      <div>
+        <p class="font-display text-brand-text font-semibold text-lg leading-none">Nuestro Bar</p>
+      </div>
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8 font-body text-sm tracking-wider">
+      <li><a href="#producto" class="text-brand-text/70 hover:text-brand-gold transition-colors">Producto</a></li>
+      <li><a href="#nosotros" class="text-brand-text/70 hover:text-brand-gold transition-colors">Nosotros</a></li>
+      <li><a href="#galeria"  class="text-brand-text/70 hover:text-brand-gold transition-colors">Galería</a></li>
+      <li><a href="#contacto" class="text-brand-text/70 hover:text-brand-gold transition-colors">Contacto</a></li>
+    </ul>
+
+    <a href={WA_LINK} target="_blank" rel="noopener noreferrer"
+      class="hidden md:inline-flex items-center gap-2 bg-brand-gold text-brand-bg font-body font-bold text-sm px-6 py-2.5 rounded-full hover:bg-brand-text transition-all duration-300 hover:scale-105">
+      <span class="material-icons-round" style="font-size:16px">local_bar</span>
+      Pedir Ahora
+    </a>
+
+    <label for="menu-toggle" class="md:hidden cursor-pointer text-brand-text/80 hover:text-brand-gold transition-colors">
+      <span class="material-icons-round">menu</span>
+    </label>
+  </div>
+
+  <input type="checkbox" id="menu-toggle" class="peer hidden" />
+  <div class="hidden peer-checked:block md:hidden bg-brand-bg/95 backdrop-blur-lg border-t border-brand-purple/20 px-6 py-5">
+    <ul class="flex flex-col gap-4 font-body text-sm tracking-wider mb-5">
+      <li><a href="#producto" class="text-brand-text/70 hover:text-brand-gold transition-colors">Producto</a></li>
+      <li><a href="#nosotros" class="text-brand-text/70 hover:text-brand-gold transition-colors">Nosotros</a></li>
+      <li><a href="#galeria"  class="text-brand-text/70 hover:text-brand-gold transition-colors">Galería</a></li>
+      <li><a href="#contacto" class="text-brand-text/70 hover:text-brand-gold transition-colors">Contacto</a></li>
+    </ul>
+    <a href={WA_LINK} target="_blank" rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 bg-brand-gold text-brand-bg font-body font-bold text-sm px-6 py-2.5 rounded-full">
+      <span class="material-icons-round" style="font-size:16px">local_bar</span>
+      Pedir Ahora
+    </a>
+  </div>
+</nav>

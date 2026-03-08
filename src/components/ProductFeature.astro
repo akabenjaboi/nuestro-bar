@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets';
+import etiquetasImg from '../images/etiquetas.jpg';
+import { WA_LINK } from '../config/site';
+---
+
+<section id="producto" class="py-14 md:py-28 relative overflow-hidden">
+  <div class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-rose/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+
+    <div class="relative">
+      <Image src={etiquetasImg} alt="Etiquetas Nuestro Bar" width={580} height={440}
+        class="rounded-2xl md:rounded-3xl object-cover w-full shadow-2xl" />
+      <div class="absolute -top-4 -right-4 hidden md:flex bg-brand-gold text-brand-bg rounded-2xl p-4 font-body font-bold text-center shadow-2xl flex-col items-center">
+        <span class="font-display text-2xl font-bold leading-none">100%</span>
+        <span class="text-[10px] tracking-[0.2em] mt-1">ARTESANAL</span>
+      </div>
+      <div class="absolute -bottom-3 left-6 right-6 h-6 bg-brand-gold/20 blur-xl rounded-full"></div>
+    </div>
+
+    <div>
+      <span class="inline-block text-brand-rose font-body text-xs tracking-[0.3em] uppercase mb-3">Nuestro Producto</span>
+      <h2 class="font-display text-3xl md:text-5xl text-brand-text font-bold mb-4 leading-tight">
+        El Pisco Sour<br>
+        <span class="text-brand-gold italic">que te faltaba</span>
+      </h2>
+      <p class="font-body text-brand-text/65 leading-relaxed mb-6 md:mb-5">
+        Nuestra receta valdiviana combina la tradición del pisco con ingredientes frescos del sur. El resultado es una bebida equilibrada, aromática y lista para transformar cualquier ocasión en algo especial.
+      </p>
+
+      <!-- Second paragraph: desktop only -->
+      <p class="hidden md:block font-body text-brand-text/65 leading-relaxed mb-10">
+        Disponible en distintas presentaciones para que cada momento tenga su copa perfecta. Listo para servir, listo para sorprender.
+      </p>
+
+      <!-- Feature list: desktop only -->
+      <div class="hidden md:grid grid-cols-2 gap-3 mb-10">
+        {[
+          'Sin conservantes',
+          'Receta artesanal',
+          'Listo para servir',
+          'Origen valdiviano',
+          'Sabor equilibrado',
+          'Ideal para regalar'
+        ].map((item) => (
+          <div class="flex items-center gap-2">
+            <span class="material-icons-round text-brand-gold" style="font-size:18px">check_circle</span>
+            <span class="font-body text-brand-text/75 text-sm">{item}</span>
+          </div>
+        ))}
+      </div>
+
+      <a href={WA_LINK} target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 bg-brand-gold text-brand-bg font-body font-bold px-8 py-3.5 rounded-full hover:bg-brand-text transition-all duration-300 hover:scale-105 shadow-lg shadow-brand-gold/20">
+        <span class="material-icons-round" style="font-size:18px">shopping_cart</span>
+        Quiero Uno
+      </a>
+    </div>
+
+  </div>
+</section>

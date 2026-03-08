@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import compartirImg from '../images/compartir.jpg';
+---
+
+<!-- Desktop only — hidden on mobile to prevent duplicate stats and reduce scroll -->
+<section class="hidden md:block py-28 relative overflow-hidden">
+  <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+
+    <div class="order-2 md:order-1">
+      <span class="inline-block text-brand-rose font-body text-xs tracking-[0.3em] uppercase mb-4">Más que una bebida</span>
+      <h2 class="font-display text-4xl md:text-5xl text-brand-text font-bold mb-6 leading-tight">
+        Crea momentos<br>
+        <span class="text-brand-gold italic">que se recuerdan</span>
+      </h2>
+      <p class="font-body text-brand-text/65 leading-relaxed mb-5">
+        Nuestro Bar nació de la idea de que las mejores conversaciones suceden alrededor de una buena copa. Creemos en el poder de compartir, de reunirse y de hacer de cada encuentro algo que vale la pena.
+      </p>
+      <p class="font-body text-brand-text/65 leading-relaxed mb-12">
+        Porque los momentos más valiosos son los que vivimos juntos — y nosotros queremos ser parte de esos momentos.
+      </p>
+
+      <div class="border-l-2 border-brand-gold pl-6 mb-12">
+        <p class="font-display text-xl text-brand-text/80 italic leading-relaxed">
+          "Una copa de Pisco Sour Valdiviano es una excusa perfecta para reunirse."
+        </p>
+        <p class="font-body text-brand-gold text-sm mt-3 tracking-widest">— NUESTRO BAR</p>
+      </div>
+
+      <div class="flex items-center gap-8">
+        <div class="text-center">
+          <p class="font-display text-3xl font-bold text-brand-gold">100%</p>
+          <p class="font-body text-brand-text/45 text-xs tracking-widest mt-1">ARTESANAL</p>
+        </div>
+        <div class="w-px h-12 bg-brand-purple/40"></div>
+        <div class="text-center">
+          <p class="font-display text-3xl font-bold text-brand-gold">Sur</p>
+          <p class="font-body text-brand-text/45 text-xs tracking-widest mt-1">DE CHILE</p>
+        </div>
+        <div class="w-px h-12 bg-brand-purple/40"></div>
+        <div class="text-center">
+          <p class="font-display text-3xl font-bold text-brand-gold">∞</p>
+          <p class="font-body text-brand-text/45 text-xs tracking-widest mt-1">MOMENTOS</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-1 md:order-2 relative">
+      <div class="absolute inset-0 bg-brand-gold/10 rounded-3xl blur-3xl scale-105 pointer-events-none"></div>
+      <Image src={compartirImg} alt="Compartiendo Nuestro Bar" width={580} height={460}
+        class="relative rounded-3xl object-cover w-full shadow-2xl" />
+    </div>
+
+  </div>
+</section>

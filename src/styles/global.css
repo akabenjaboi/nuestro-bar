@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #210d42;
+  --color-brand-text: #fdf7ff;
+  --color-brand-gold: #c9a227;
+  --color-brand-rose: #e07ba0;
+  --color-brand-card: #3a1a6e;
+  --color-brand-purple: #6b3fa0;
+
+  --font-display: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #210d42;
+    color: #fdf7ff;
+    font-family: "Lato", sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  :target {
+    scroll-margin-top: 80px;
+  }
+}

@@ -1,0 +1,134 @@
+---
+import { Image } from 'astro:assets';
+import compartir2Img from '../images/compartir2.jpg';
+import compartirImg  from '../images/compartir.jpg';
+import sourRosaImg   from '../images/SourRosa.jpg';
+import etiquetasImg  from '../images/etiquetas.jpg';
+---
+
+<section id="galeria" class="py-14 md:py-28">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-8 md:mb-16">
+      <span class="inline-block text-brand-rose font-body text-xs tracking-[0.3em] uppercase mb-3">Galería</span>
+      <h2 class="font-display text-3xl md:text-5xl text-brand-text font-bold mb-2 md:mb-4">Nuestra esencia</h2>
+      <p class="hidden md:block font-body text-brand-text/50 max-w-md mx-auto">Un vistazo al mundo de Nuestro Bar — donde cada imagen cuenta una historia de encuentro.</p>
+    </div>
+
+    <!-- Desktop: mosaico 4 imágenes, 4 cols / 2 rows -->
+    <div class="hidden md:grid grid-cols-4 gap-4" style="grid-template-rows: 300px 300px;">
+
+      <!-- compartir2: 2 cols, 2 rows (dominante) -->
+      <div class="col-span-2 row-span-2 rounded-3xl overflow-hidden group cursor-pointer relative">
+        <Image src={compartir2Img} alt="Nuestro Bar" width={620} height={600}
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <p class="font-display text-brand-text text-xl font-semibold">Compartir siempre</p>
+        </div>
+      </div>
+
+      <!-- compartir: 1 col, 1 row -->
+      <div class="rounded-3xl overflow-hidden group cursor-pointer relative">
+        <Image src={compartirImg} alt="Compartiendo" width={310} height={300}
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+      </div>
+
+      <!-- SourRosa: 1 col, 1 row -->
+      <div class="rounded-3xl overflow-hidden group cursor-pointer relative">
+        <Image src={sourRosaImg} alt="Sour Rosa" width={310} height={300}
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          <p class="font-display text-brand-text font-semibold">Sour Rosa</p>
+        </div>
+      </div>
+
+      <!-- etiquetas: 2 cols, 1 row -->
+      <div class="col-span-2 rounded-3xl overflow-hidden group cursor-pointer relative">
+        <Image src={etiquetasImg} alt="Nuestras Etiquetas" width={620} height={300}
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+          <p class="font-display text-brand-text font-semibold">Nuestras Etiquetas</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Mobile: carrusel 4 slides con scroll-snap -->
+    <div class="md:hidden relative">
+
+      <div id="gallery-slider" class="flex overflow-x-auto gap-4 pb-2"
+        style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
+
+        <div class="flex-shrink-0 rounded-3xl overflow-hidden relative" style="width:82vw; scroll-snap-align:start; aspect-ratio:3/4;">
+          <Image src={compartir2Img} alt="Nuestro Bar" width={380} height={500} class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/75 via-transparent to-transparent flex items-end p-5">
+            <p class="font-display text-brand-text text-lg font-semibold">Compartir siempre</p>
+          </div>
+        </div>
+
+        <div class="flex-shrink-0 rounded-3xl overflow-hidden relative" style="width:82vw; scroll-snap-align:start; aspect-ratio:3/4;">
+          <Image src={sourRosaImg} alt="Sour Rosa" width={380} height={500} class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/75 via-transparent to-transparent flex items-end p-5">
+            <p class="font-display text-brand-text text-lg font-semibold">Sour Rosa</p>
+          </div>
+        </div>
+
+        <div class="flex-shrink-0 rounded-3xl overflow-hidden relative" style="width:82vw; scroll-snap-align:start; aspect-ratio:3/4;">
+          <Image src={compartirImg} alt="Compartiendo" width={380} height={500} class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/75 via-transparent to-transparent flex items-end p-5">
+            <p class="font-display text-brand-text text-lg font-semibold">Un momento para dos</p>
+          </div>
+        </div>
+
+        <div class="flex-shrink-0 rounded-3xl overflow-hidden relative" style="width:82vw; scroll-snap-align:start; aspect-ratio:3/4;">
+          <Image src={etiquetasImg} alt="Nuestras Etiquetas" width={380} height={500} class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/75 via-transparent to-transparent flex items-end p-5">
+            <p class="font-display text-brand-text text-lg font-semibold">Nuestras Etiquetas</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Dots: 4 -->
+      <div class="flex justify-center gap-3 mt-6">
+        <button id="dot-0" class="gallery-dot h-2 rounded-full transition-all duration-300" style="width:24px; background-color:#c9a227;"></button>
+        <button id="dot-1" class="gallery-dot h-2 rounded-full transition-all duration-300" style="width:8px;  background-color:rgba(253,247,255,0.25);"></button>
+        <button id="dot-2" class="gallery-dot h-2 rounded-full transition-all duration-300" style="width:8px;  background-color:rgba(253,247,255,0.25);"></button>
+        <button id="dot-3" class="gallery-dot h-2 rounded-full transition-all duration-300" style="width:8px;  background-color:rgba(253,247,255,0.25);"></button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  #gallery-slider::-webkit-scrollbar { display: none; }
+</style>
+
+<script>
+  const slider = document.getElementById('gallery-slider');
+  if (slider) {
+    const dots = [0, 1, 2, 3].map(i => document.getElementById(`dot-${i}`));
+    const GOLD = '#c9a227';
+    const DIM  = 'rgba(253,247,255,0.25)';
+
+    function updateDots(index: number) {
+      dots.forEach((dot, i) => {
+        if (!dot) return;
+        dot.style.backgroundColor = i === index ? GOLD : DIM;
+        dot.style.width = i === index ? '24px' : '8px';
+      });
+    }
+
+    slider.addEventListener('scroll', () => {
+      updateDots(Math.round(slider.scrollLeft / slider.offsetWidth));
+    });
+
+    dots.forEach((dot, i) => {
+      dot?.addEventListener('click', () => {
+        slider.scrollTo({ left: i * slider.offsetWidth, behavior: 'smooth' });
+      });
+    });
+  }
+</script>
